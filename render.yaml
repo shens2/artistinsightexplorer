@@ -1,0 +1,13 @@
+# Render deployment configuration for backend
+version: 2
+services:
+  - type: web
+    name: artist-insight-explorer-api
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
